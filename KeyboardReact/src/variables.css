@@ -1,0 +1,59 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+/*Aqui va a ir las variables css que vamos a usar
+-Colores de al aplicación
+-Tipografía de la aplicación
+-Tamaño de los elementos: Para ello hay que usar escalas fluidas
+-Peso de la tipografía
+-Espaciados
+*/
+:root{
+    /*Fuente de la aplicación*/
+    --font-primary:"Roboto", serif;
+    --font-secondary:"Poppins", serif;
+
+    /*Colores de la app*/
+    --color-primary:#1B2021;
+    --color-secondary: #E8F1F2;
+    --color-effect: #c5c9c9;
+    --color-effect-variante:#1f2526 ;
+    --color-terciary:#FFFFFF;
+    --color-acentuacion: #E33333;
+
+    /*Tamaño de los elementos de manera fluida
+        Base size: 16px (para interfaces pequeñas) y 19px (para
+        interfaces grandes).
+        o Minimum viewport width: 320px.
+        o Maximum viewport width: 1440px
+    */
+    --fs-sm: clamp(0.8rem, 0.13vi + 0.77rem, 0.89rem);
+    --fs-base: clamp(1rem, 0.27vi + 0.95rem, 1.19rem);
+    --fs-md: clamp(1.25rem, 0.48vi + 1.15rem, 1.58rem);
+    --fs-lg: clamp(1.56rem, 0.78vi + 1.41rem, 2.11rem);
+    --fs-xl: clamp(1.95rem, 1.23vi + 1.71rem, 2.81rem);
+    --fs-xxl: clamp(2.44rem, 1.87vi + 2.07rem, 3.75rem);
+    --fs-xxxl: clamp(3.05rem, 2.78vi + 2.5rem, 5rem);
+
+    /*Peso de la tipografía*/
+    --fw-bold:800;
+    --fw-semibold:600;
+    --fw-regular:400;
+    --fw-thin:200;
+    --fw-light:300;
+
+     /*Espaciado*/
+     --spacing-xxl:4rem;
+     --spacing-xl:2rem;
+     --spacing-lg:1.5rem;
+     --spacing-md:1rem;
+     --spacing-se:0.75rem;
+     --spacing-xs:0.5rem;
+     --spacing-xxs:0.25rem;
+
+
+
+}

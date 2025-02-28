@@ -1,0 +1,23 @@
+/*
+  Inicialización y valores por defecto: En este punto lo que se quiere lograr
+  es borrar toda aquella lógica o estilado que no se va a usar, ya que vite
+  genera un proyecto por defecto. Para ello:
+  1. Index.css: Tiene que albergar el reseteado del formato del navegador y
+  el estilado general del body: color de fondo de la aplicación y estilado
+  de la tipografía (familia, peso, tamaño, color)
+*/
+
+@import url('./variables.css');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+ 
+}
+body{
+  font-family: var(--font-primary);
+  background-color: var(--color-primary);
+  color: var(--color-terciary);
+  font-weight: var(--fw-regular);
+}

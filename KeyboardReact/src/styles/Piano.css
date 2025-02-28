@@ -1,0 +1,51 @@
+
+.piano-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 90dvh;
+    width: 100dvw;
+   
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+
+
+.piano{
+    display: grid;
+    grid-template-columns: repeat(88, 1fr);
+    overflow-x: auto;
+    padding: var(--spacing-md);
+    height: 25rem;
+    width: 100%;
+    position: relative;
+
+}
+ /*Estilizamos el scrollbar y determinamos la anchura y altura*/
+.piano::-webkit-scrollbar {
+    width: var(--fs-base); 
+    height: var(--fs-base); 
+  }
+  /*Esto determina el color de la barra que aparece redondea los bordes y le aplica un borde */
+  .piano::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary); 
+    border-radius: var(--fs-sm); 
+    border: 3px solid var(--color-secondary); 
+  }
+  /*Esto determina el color del fondo de la barra*/
+  .piano::-webkit-scrollbar-track {
+    background-color: var(--color-terciary); 
+    border-radius: var(--fs-sm); 
+  }
+  /*Esto es para ocultar los botones de scroll es decir las flechas*/
+  .piano::-webkit-scrollbar-button {
+    display: none; 
+  }
+   /*Esto es para que cuando el raton este encima de la barra cambie de color a uno de acentuacion*/
+  .piano::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-acentuacion); 
+  }
+  
+
+
+
