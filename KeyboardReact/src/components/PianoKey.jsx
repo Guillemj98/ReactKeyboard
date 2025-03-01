@@ -23,12 +23,15 @@ export default function PianoKey(props){
 
     const handlerMouseDown = ()=>{
         setIsPressed(true);
+        props.onPlay(props.note);
+        console.log("Cositas")
     }
     const handlerMouseUp = ()=>{
         setIsPressed(false);
     }
     const handlerMouseLeave = ()=>{
         setIsPressed(false);
+        
     }
 
 

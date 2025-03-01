@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import PianoKey from "./PianoKey";
 import keyNotes from "../assets/keyNotes";
 import "../styles/Piano.css"
 import piano from "../assets/piano.mp3";
-import OCTAVAS from "../assets/keyNotes";
 import useSound from "use-sound";
 
 
@@ -32,21 +31,19 @@ react indentifique cada tecla de manera unica
 
 */
 
-export default function Piano(){
-    const[noteHistory, setNoteHistory]= useState([]);
-    // Creamos un objeto de sprites con inicio y final de cada nota
-    const soundSprites = keyNotes.reduce((acc, note)=> {
-        acc[note.note] = [note.start, note.duration];
+export default function Piano(props){
+   
+    const spriteMap = keyNotes.reduce((acc, { note, start, duration }) => {
+        acc[note] = [start, duration]; 
         return acc;
-    }, {});
-
-    // Hook para reproducir los sonidos
-    const[play] = useSound(piano, {sprite: soundSprites});
+      }, {});
     
-    const handlerPlayNote= (note)=>{
-        play({note}); // Esto reproduce la nota
-        setNoteHistory((prev)=> [note, ...prev.slice(0,1)]);// Guarda las ultimas 2 notas que se han tocado
-    }
+      const [play] = useSound(piano, { sprite: spriteMap });
+    
+      const handlerPlayNote = (note) => {
+        play({id: note});
+        props.setNoteHistory((prev) => [note, ...prev.slice(0, 1)]);
+      };
 
 
     return(

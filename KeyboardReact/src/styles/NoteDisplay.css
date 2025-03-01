@@ -1,7 +1,17 @@
 
-
 .note-display{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    height: 50dvh;
 }
+.currentNote {
+    color: var(--color-secondary);
+    font-size: var(--fs-xxxl);
+  }
+  
+  .previousNote {
+    color: var(--color-effect);
+    font-size: var(--fs-xl);
+  }

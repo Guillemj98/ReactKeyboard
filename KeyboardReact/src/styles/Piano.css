@@ -1,10 +1,10 @@
 
 .piano-wrapper{
     display: flex;
-    justify-content: center;
-    align-items: end;
-    height: 90dvh;
+    justify-content: start;
+    align-items: center;
     width: 100dvw;
+    flex-direction: column-reverse;
    
     padding: var(--spacing-lg) var(--spacing-md);
 }
