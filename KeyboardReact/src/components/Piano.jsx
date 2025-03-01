@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import PianoKey from "./PianoKey";
 import keyNotes from "../assets/keyNotes";
 import "../styles/Piano.css"
 import piano from "../assets/piano.mp3";
 import OCTAVAS from "../assets/keyNotes";
+import useSound from "use-sound";
 
 
 //Para realizar el componente del piano debemos hacer los siguientes pasoso
@@ -32,13 +33,36 @@ react indentifique cada tecla de manera unica
 */
 
 export default function Piano(){
+    const[noteHistory, setNoteHistory]= useState([]);
+    // Creamos un objeto de sprites con inicio y final de cada nota
+    const soundSprites = keyNotes.reduce((acc, note)=> {
+        acc[note.note] = [note.start, note.duration];
+        return acc;
+    }, {});
+
+    // Hook para reproducir los sonidos
+    const[play] = useSound(piano, {sprite: soundSprites});
+    
+    const handlerPlayNote= (note)=>{
+        play({note}); // Esto reproduce la nota
+        setNoteHistory((prev)=> [note, ...prev.slice(0,1)]);// Guarda las ultimas 2 notas que se han tocado
+    }
 
 
     return(
-        <div className="piano-wrapper">
-            <div className="piano">
-                {keyNotes.map((key, index)=>(<PianoKey key={index} note={key.note} type={key.type} gridColumn ={key.gridColumn} play ={key.start} stop={key.duration}/>))}
+      
+            <div className="piano-wrapper">
+                <div className="piano">
+                    {keyNotes.map((key, index)=>(
+                        <PianoKey 
+                        key={index} 
+                        note={key.note} 
+                        type={key.type} 
+                        gridColumn ={key.gridColumn} 
+                        onPlay={handlerPlayNote} // Pasamos la funcion
+                        />))}
+                </div>
             </div>
-        </div>
+        
     )
 }
