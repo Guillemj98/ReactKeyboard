@@ -12,7 +12,7 @@ export default function App() {
   
   return (
     <div className='app'>
-      <Header title="Piano App"/>
+      <Header  title="Piano App"/>
       <NoteDisplay noteHistory={noteHistory}></NoteDisplay>
       <Piano setNoteHistory ={setNoteHistory}/>
       

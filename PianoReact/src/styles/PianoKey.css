@@ -3,25 +3,23 @@
     align-items: end;
     justify-content: center;
     font-size: var(--fs-base);
-    font-weight: var(--fw-bold);
+    font-weight: var(--fw-semibold);
     border: 1px solid black;
-    padding-bottom: var(--spacing-xs);
-    
-    
+    /*Esto es para que al pulsar las teclas se vea mas fluido la transición*/
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+
+
 }
 
 .piano-key__white{
     background-color: var(--color-secondary);
-    width: 5rem;
-    height: 100%;
     z-index: 0;
     color: var(--color-primary);
 
 }
 
 .piano-key__black{
-    background-color: var(--color-primary);
-    width: 3rem;
+    background-color: var(--color-primary); 
     height: 12rem;
     color: var(--color-secondary);
     position: absolute;

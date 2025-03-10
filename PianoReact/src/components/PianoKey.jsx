@@ -42,6 +42,14 @@ export default function PianoKey(props){
         onMouseDown={handlerMouseDown}
         onMouseLeave={handlerMouseUp}
         onMouseUp={handlerMouseLeave}
+        // Todos estos atributos son para mejorar la accesibilidad en dispositivos moviles 
+        // son atributos no necesarios para la app 
+        //Hace que el elemento sea enfocable con el teclado (usando la tecla Tab).
+        tabIndex="0"
+        // Indica a las tecnologías de asistencia (como lectores de pantalla) que este elemento debe comportarse como un botón.
+        role="button"
+        //Esto ayuda a usuarios con discapacidad visual, ya que los lectores de pantalla anunciarán el elemento como "Piano-key C" en lugar de solo leer el contenido visual.
+        aria-label={`Piano-key ${props.note}`}
         
         >
             <div className="piano-key__name">

@@ -3,22 +3,25 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    width: 100dvw;
-    flex-direction: column-reverse;
-   
+    width: 95dvw;
+    flex-direction: column;
     padding: var(--spacing-lg) var(--spacing-md);
+    border-radius: var(--spacing-xs);
+    
 }
 
 
 
 .piano{
     display: grid;
-    grid-template-columns: repeat(88, 1fr);
+    grid-template-columns: repeat(208, 1rem);
     overflow-x: auto;
     padding: var(--spacing-md);
     height: 25rem;
     width: 100%;
     position: relative;
+    border-radius: var(--spacing-xs);
+    
 
 }
  /*Estilizamos el scrollbar y determinamos la anchura y altura*/
